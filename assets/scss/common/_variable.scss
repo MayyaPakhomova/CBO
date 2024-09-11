@@ -1,0 +1,177 @@
+:root {
+  --black     : #000000;
+  --white     : #ffffff;
+  --ivory     : #EFDFD9;
+  --white-site: rgba(255, 255, 255, 0.7);
+  --red       : #a5002b;
+  --text      : #2d5c8d;
+  --blue      : #2d5c8a;
+  --blue-light: #577da4;
+}
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff');
+  }
+}
+
+@include font-face('DIN2014', '../fonts/DIN2014-Regular', 400, normal);
+@include font-face('DIN2014', '../fonts/DIN2014-Bold', 700, normal);
+@include font-face('DIN2014', '../fonts/DIN2014-DemiBold', 600, normal);
+@include font-face('DIN2014', '../fonts/DIN2014-ExtraBold', 800, normal);
+@include font-face('DIN2014', '../fonts/DIN2014-Light', 300, normal);
+
+$font-family-default: "DIN2014", sans-serif;
+
+$bigDesktop: 1921px;
+$laptop    :1300px;
+$main      : 1160px;
+$hovers    : 1025px;
+$md        : 960px;
+$sm        : 768px;
+$xs        : 575px;
+$xxs       : 374px;
+
+@mixin bigDesktop {
+  @media (min-width: $bigDesktop) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin main {
+  @media (max-width: $main) {
+    @content;
+  }
+}
+
+@mixin hovers {
+  @media (min-width: $hovers) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+
+@mixin xxs {
+  @media (max-width: $xxs) {
+    @content;
+  }
+}
+
+
+@mixin transition {
+  -webkit-transition: all .4s ease;
+  -o-transition     : all .4s ease;
+  transition        : all .4s ease;
+}
+
+@mixin hover {
+  transition: all 0.4s ease;
+
+  @media (min-width: 1025px) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+
+
+@mixin section {
+  padding-bottom: 100px;
+
+  @include main {
+    padding-bottom: 70px;
+  }
+
+  @include xs {
+    padding-bottom: 50px;
+  }
+}
+
+@mixin img {
+  position: relative;
+  overflow: hidden;
+  height  : 0;
+
+  img {
+    position  : absolute;
+    width     : 100%;
+    height    : 100%;
+    top       : 0;
+    left      : 0;
+    right     : 0;
+    object-fit: cover;
+  }
+}
+
+@mixin margin-bottom-20 {
+  margin-bottom: 20px;
+
+  @include xs {
+    margin-bottom: 12px;
+  }
+}
+
+@mixin margin-bottom-30 {
+  margin-bottom: 30px;
+
+  @include xs {
+    margin-bottom: 15px;
+  }
+}
+
+@mixin margin-bottom-70 {
+  margin-bottom: 70px;
+
+  @include main {
+    margin-bottom: 50px;
+  }
+
+  @include xs {
+    margin-bottom: 25px;
+  }
+}
+
+@mixin border-radius {
+  border-radius: 12px;
+
+  @include md {
+    border-radius: 8px;
+  }
+}
+
+// @include transition;
+// @include  hover {
+
+// }
+
+// @include margin-bottom-;
+// @include section;
+// @include img;
+// @include border-radius;

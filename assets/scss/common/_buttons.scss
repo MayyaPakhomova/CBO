@@ -1,0 +1,85 @@
+.button {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  font-size      : 16px;
+  font-style     : normal;
+  font-weight    : 500;
+  line-height    : 135%;
+  letter-spacing : -0.36px;
+  text-transform : uppercase;
+  text-align     : center;
+  border-radius  : 16px;
+  border         : 2px solid var(--text);
+  color          : var(--text);
+  font-family    : $font-family-default;
+  min-width      : 180px;
+  min-height     : 60px;
+
+  @include hover {
+    background-color: var(--text);
+    color           : var(--white-back-2);
+  }
+
+  @include md {
+    border-radius: 10px;
+  }
+
+  @include xs {
+    font-size: 14px;
+  }
+
+  &.red {
+    border-color: var(--primary);
+    color       : var(--primary);
+
+    @include hover {
+      color           : var(--white-back-2);
+      border-color    : var(--primary);
+      background-color: var(--primary);
+    }
+  }
+}
+
+.button-circle {
+  font-size      : 16px;
+  font-style     : normal;
+  font-weight    : 500;
+  line-height    : 135%;
+  letter-spacing : -0.36px;
+  text-transform : uppercase;
+  text-align     : center;
+  border-radius  : 50%;
+  padding        : 0 5px;
+  width      : 150px;
+  height     : 150px;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  border         : 2px solid var(--primary);
+  color          : var(--primary);
+
+  @include hover {
+    color     : var(--white);
+    background: var(--primary);
+  }
+
+  @include xs {
+    width : 110px;
+    height: 110px;
+    font-size : 14px;
+    padding        : 0 3px;
+  }
+
+  &.red {
+    border    : 2px solid var(--primary);
+    color     : var(--white);
+    background: var(--primary);
+
+    @include hover {
+      color     : var(--primary);
+      background: transparent;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.other-programs {
+  position: relative;
+  background: var(--white-back-2);
+  z-index: 2;
+
+  h2 {
+    @include margin-bottom-70;
+  }
+
+  &__wrapper {
+    display        : flex;
+    justify-content: space-between;
+
+    @include main {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    width          : calc(25% - 15px);
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    min-height     : 345px;
+    border-radius  : 30px;
+    border         : 2px solid var(--text);
+    padding        : 25px;
+
+    @include main {
+      padding      : 25px 15px;
+      width        : calc(50% - 10px);
+      margin-bottom: 25px;
+    }
+    @include md{
+      border-radius: 20px;
+    }
+    @include xs {
+      min-height: 250px;
+      width     : 100%;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      color       : var(--primary);
+      border-color: var(--primary);
+
+      .button {
+        border-color: var(--primary);
+        color       : var(--primary);
+
+        @include hover {
+          color       : var(--white-back-2);
+          border-color: var(--primary);
+          background-color: var(--primary);
+        }
+      }
+    }
+  }
+
+  h3 {
+    margin-bottom: 16px;
+  }
+
+  .button {
+    max-width      : 180px;
+  }
+
+  &__inner {
+    margin-bottom: 16px;
+  }
+
+}

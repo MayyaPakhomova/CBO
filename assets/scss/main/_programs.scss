@@ -1,0 +1,99 @@
+.programs {
+  h2 {
+    color: var(--primary);
+    @include margin-bottom-70;
+    @include sm{
+      padding-top: 20px;
+    }
+  }
+
+  &__wrapper {
+    display        : flex;
+    justify-content: space-between;
+    flex-wrap      : wrap;
+  }
+
+  &__item {
+    border-radius: 30px;
+    border       : 2px solid var(--text);
+    padding      : 25px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    background   : var(--white-back-2);
+    @include main{
+      padding      : 25px 15px;
+    }
+    @include md{
+      border-radius: 20px;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      width        : calc(50% - 10px);
+      margin-bottom: 20px;
+      grid-template-columns:calc(43% - 10px) calc(57% - 10px);
+      @include main{
+        display: flex;
+        flex-direction: column;
+        gap:0;
+      }
+      @include sm{
+       width: 100%;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 100%;
+      grid-template-columns:calc(62% - 10px) calc(38% - 10px);
+      .programs-card__description{
+        max-width: 415px;
+      }
+      .programs-card__photo{
+        padding-top: 67%;
+      }
+      @include main{
+        display: flex;
+        flex-direction: column;
+        gap:0;
+      }
+    }
+  }
+
+  .programs-card{
+    h3 {
+      grid-column: 1;
+      grid-row: 1;
+      @include main{
+        @include margin-bottom-20;
+      }
+    }
+    &__description{
+      grid-column: 1;
+      grid-row: 1;
+      margin-top: 41px;
+      @include main{
+        margin-top: 0;
+        @include margin-bottom-20;
+      }
+    }
+    .button {
+      max-width: 180px;
+      grid-column: 1;
+      grid-row: 3;
+    }
+    &__photo {
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      padding-top: 91%;
+      @include border-radius;
+      @include img;
+      @include main{
+        @include margin-bottom-20;
+      }
+
+      @include sm{
+        padding-top: 74%;
+      }
+    }
+  }
+}

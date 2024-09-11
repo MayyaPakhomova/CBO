@@ -1,0 +1,139 @@
+.first-screen-main {
+  position        : relative;
+  overflow        : hidden;
+  background-color: var(--white-back);
+  &__photo {
+    width  : 100%;
+
+    img {
+      object-position: bottom;
+      position       : relative;
+      object-fit     : contain;
+      &:nth-child(1){
+        @include xs{
+          display: none;
+        }
+      }
+      &:nth-child(2){
+        display: none;
+        @include xs{
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  &__wrapper {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : flex-end;
+    margin-top     : -60px;
+    @include margin-bottom-20;
+    @include bigDesktop {
+      margin-top     : 0;
+    }
+    @media (max-width: 1800px) {
+      margin-top: 0;
+    }
+
+    @include sm {
+      flex-direction: column;
+      margin-bottom : 25px;
+      margin-left   : 0px;
+
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+
+  &__left,
+  &__bottom-left {
+    width       : 47%;
+    margin-right: 12%;
+
+    @include sm {
+      width       : 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__right,
+  &__bottom-right {
+    width: 45%;
+
+    @include sm {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: left;
+      font-size : 80px;
+
+      @include sm {
+        text-align: center;
+      }
+
+      p{
+        display: block;
+
+        @include sm {
+          display: inline;
+        }
+
+        &:last-child {
+          padding-left: 30%;
+
+          @include sm {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper-bottom {
+    display        : flex;
+    justify-content: space-between;
+    margin-bottom  : 110px;
+
+    @include sm {
+      flex-direction: column-reverse;
+      margin-bottom : 80px;
+    }
+  }
+
+  &__bottom-left {
+    max-width: 570px;
+
+    @include sm {
+      max-width : 100%;
+      text-align: center;
+    }
+  }
+
+  &__bottom-right {
+    .button-circle {
+      margin-top : -70px;
+      margin-left: 0px;
+
+      @include main {
+        margin-top : -45px;
+        margin-left: -45px;
+      }
+
+      @include md {
+        margin-top : -15px;
+        margin-left: -45px;
+      }
+
+      @include sm {
+        margin: 0 auto 25px;
+      }
+    }
+  }
+  &__text{
+    max-width: 1135px;
+  }
+}

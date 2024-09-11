@@ -1,0 +1,122 @@
+.faq {
+  background: var(--white-back-2);
+
+  h2 {
+    @include margin-bottom-70;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 1165px;
+    margin   : 0 auto -10px;
+    @include sm{
+      z-index: 1;
+    }
+  }
+}
+
+.faq-accordion {
+  margin-bottom: 10px;
+
+  &__wrapper {
+    padding: 37px 28px 37px 37px;
+    border-radius: 20px;
+    background: var(--white-back);
+    @include xs{
+      padding: 20px 15px;
+    }
+  }
+
+  &__content {
+    max-height     : 0;
+    overflow       : hidden;
+    transition     : max-height .4s ease-in-out;
+
+    p {
+      max-width: 80%;
+      padding-top: 24px;
+      @include xs{
+        max-width: 100%;
+        padding-top: 15px;
+      }
+    }
+    a{
+      display: inline;
+      text-decoration: underline;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__cross {
+    flex           : 0 0 auto;
+    width          : 45px;
+    height         : 45px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    border-radius  : 50%;
+    border         : 2px solid var(--primary);
+
+    @include xs{
+      border-width: 1px;
+      width : 30px;
+      height: 30px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    width          : 100%;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    fill           : var(--primary);
+    @include transition;
+
+    h3 {
+      display        : flex;
+      justify-content: space-between;
+      color         : var(--primary);
+      text-transform: none;
+      margin-right: 30px;
+      text-align: left;
+
+      span:first-child {
+        padding-right: 50px;
+        @include main{
+          padding-right: 30px;
+        }
+        @include xs{
+          padding-right: 13px;
+        }
+      }
+      @include xs{
+        font-size: 16px;
+      }
+    }
+
+    svg {
+      width : 29px;
+      height: 29px;
+      @include transition;
+
+      @include xs {
+        width :21px;
+        height: 21px;
+      }
+      path {
+        fill: var(--primary);
+
+      }
+    }
+
+    &.is-open {
+      overflow       : visible;
+      svg {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+}
